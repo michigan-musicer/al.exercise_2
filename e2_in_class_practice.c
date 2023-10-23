@@ -40,13 +40,13 @@ void showArrayBasics()
     int array1[50];
 
     // initializer list
-    int* array2 = {1, 2, 3, 4};
+    int array2[4] = {1, 2, 3, 4};
 
     // type is pointer -- print pointer, array
     int x = 0;
     int* x_ptr = &x;
-    printf("x_ptr resides at %x", x_ptr);
-    printf("array2 resides at %x", array2);
+    printf("x_ptr resides at %p", x_ptr);
+    printf("array2 resides at %p", array2);
 
     // indexing
     for (size_t i = 0; i < 4; ++i) {
@@ -117,6 +117,8 @@ int hasSubarray(int* array, size_t sz, int target)
 
 int main() 
 {
+    showPointerBasics();
+    showArrayBasics();
     return; // remove this line to test functions
     testExerciseFunctions();
     testStackFunctions();

@@ -44,28 +44,28 @@ int stackPop(stackType* s)
 
 void testExerciseFunctions() 
 {
-    int* array1 = {1, 4, 6, 9, 2};
+    int array1[5] = {1, 4, 6, 9, 2};
     assert(findMaximum(array1, 5) == 9);
-    int* array2 = {2};
+    int array2[1] = {2};
     assert(findMaximum(array2, 1) == 1);
 
-    int* array3 = {1, 2, 3, 4};
+    int array3[4] = {1, 2, 3, 4};
     reverseArray(array3, 4);
     assert(array3[0] == 4 
         && array3[1] == 3 
         && array3[2] == 2 
         && array3[3] == 1 ); 
-    int* array4 = {5, 6, 7};
+    int array4[3] = {5, 6, 7};
     reverseArray(array4, 4);
     assert(array4[0] == 7 
         && array4[1] == 6 
         && array4[2] == 5 ); 
     
-    int* array5 = {1, 2, 3};
+    int array5[3] = {1, 2, 3};
     assert(hasSubarray(array5, 3, 3));
-    int* array6 = {1};
+    int array6[1] = {1};
     assert(! hasSubarray(array6, 1, 0));
-    int* array7 = {1, 2, -3};
+    int array7[3] = {1, 2, -3};
     assert(hasSubarray(array7, 3, 0));
 }
 
