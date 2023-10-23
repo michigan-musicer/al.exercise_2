@@ -6,17 +6,37 @@
 // In case of ties, return the lowest index.
 // 
 // EXAMPLE: array = {1, 10, -2, 0};
-// findIndexOfSecondSmallest(array, 5) should return 3.
+// findIndexOfSecondSmallest(array, 4) should return 0.
 // 
 // EXAMPLE: array = {2, 3, 3, 4, 5};
-// findIndexOfSecondSmallest(array, 5) should return 1.
+// findIndexOfSecondSmallest(array, 5) should return 3.
 // 
 // NOTE: the simplest solution requires you to use the 
 // (expr1) && (expr2) operator, which returns 1 if expr1 and
 // expr2 are both true and 0 otherwise.
 size_t findIndexOfSecondSmallest(int* array, size_t sz) 
 {
-    return 0;
+    // technically unsigned int on my computer
+    // EXAMPLE: array = {1, 10, -2, 0};
+    int minimum = array[0];
+    for (size_t i = 0; i < sz; ++i) {
+        if (array[i] < minimum) {
+            minimum = array[i];
+        }
+    }
+
+    int second_smallest = array[0];
+    for (size_t i = 0; i < sz; ++i) {
+        if (array[i] < second_smallest && minimum != array[i]) {
+            second_smallest = array[i];
+        }
+    }
+
+    for (size_t i = 0; i < sz; ++i) {
+        if (array[i] == second_smallest) {
+            return i;
+        }
+    }
 }
 
 // Multiplies every elt by the value of the last elt.
